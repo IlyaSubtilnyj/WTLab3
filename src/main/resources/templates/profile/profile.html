@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+<div th:text="${'username: '+user.getUsername()}"></div>
+<img th:src="${'/images/'+user.getAvatarName()}" alt="no image">
+<a th:if="${isOwner}" th:href="@{/profile/edit/{id}(id=${user.getId()})}">edit</a>
+<a th:if="${isOwner}" th:href="@{/logout}">logout</a>
+<a th:href="@{/home}">home</a>
+<a th:href="@{/profile/{id}/reviews_list(id=${user.getId()})}">reviews</a>
+</body>
+</html>
